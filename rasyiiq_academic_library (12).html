@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muhammad Rasyiiq | ITB STEI-K Academic Library</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap');
+:root{--ink:#080808;--muted:#666;--line:#dedede;--blue:#174ea6;--pink:#ff4da6;--violet:#875cff;--yellow:#ffc94a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fff;color:var(--ink);font-family:"DM Sans",Arial,sans-serif;overflow-x:hidden}
+button,input,select{font:inherit}button{cursor:pointer}
+.nav{width:100%;height:76px;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 5%;position:sticky;top:0;z-index:50;border-bottom:1px solid #eee}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:15px}.logo{width:36px;height:36px;border-radius:50%;background:#111;color:#fff;display:grid;place-items:center;font-size:11px}
+.navlinks{display:flex;gap:25px}.navlinks a{text-decoration:none;color:#444;font-size:12px;position:relative}.navlinks a:after{content:"";position:absolute;left:0;bottom:-8px;width:0;height:1px;background:#111;transition:.25s}.navlinks a:hover:after{width:100%}
+.hero{width:100%;min-height:850px;background:#fff;text-align:center;padding:75px 5% 0;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;left:-8%;right:-8%;bottom:-80px;height:470px;background:radial-gradient(ellipse at 25% 58%,rgba(244,73,190,.82),transparent 38%),radial-gradient(ellipse at 50% 35%,rgba(255,126,77,.75),transparent 42%),radial-gradient(ellipse at 78% 56%,rgba(255,202,69,.72),transparent 38%);filter:blur(28px);animation:gradientDrift 9s ease-in-out infinite alternate}
+.hero-inner{width:min(1180px,92vw);margin:auto;position:relative;z-index:2}.eyebrow{font-family:"Playfair Display",serif;font-style:italic;font-size:19px}
+h1{font-size:clamp(58px,8vw,108px);line-height:.92;letter-spacing:-5px;margin:18px auto 20px;font-weight:700}.hero p{max-width:650px;margin:auto;color:#555;font-size:16px;line-height:1.65}
+.btn{border:1px solid #111;border-radius:999px;padding:11px 18px;font-weight:600;background:#111;color:#fff;text-decoration:none;display:inline-block;position:relative;overflow:hidden;transition:.25s}.btn:hover{transform:translateY(-2px);box-shadow:0 14px 30px #0002}.btn:active{transform:scale(.97)}
+.hero .btn{margin-top:24px}.btn:before{content:"";position:absolute;inset:-30%;background:linear-gradient(90deg,transparent,#ffffff55,transparent);transform:translateX(-120%) rotate(12deg);transition:.7s}.btn:hover:before{transform:translateX(120%) rotate(12deg)}
+.hero-visual{width:min(520px,82vw);height:360px;margin:55px auto 0;position:relative}
+.book-stack{position:absolute;left:50%;top:25px;transform:translateX(-50%) rotate(-8deg);width:250px;height:320px;border-radius:38px;background:linear-gradient(145deg,#101010 5%,#173b85 42%,#9b35cc 68%,#ff4da6 100%);box-shadow:0 38px 90px #0f0f192e,inset 0 0 0 1px #ffffff33;animation:floatBook 5.5s ease-in-out infinite;transition:.3s}
+.book-stack:before{content:"RASYIIQ";position:absolute;left:27px;top:48px;color:#fff;font-size:19px;font-weight:700;letter-spacing:2px}.book-stack:after{content:"ACADEMIC\A LIBRARY";white-space:pre;position:absolute;left:27px;bottom:38px;color:#fff;font-size:13px;line-height:1.4}.book-stack:hover{animation:none;transform:translateX(-50%) rotate(-3deg) translateY(-14px) scale(1.025);box-shadow:0 50px 100px #0f0f1966}
+@keyframes floatBook{0%,100%{transform:translateX(-50%) rotate(-8deg) translateY(8px)}50%{transform:translateX(-50%) rotate(-5deg) translateY(-16px)}}
+@keyframes gradientDrift{0%{transform:translate3d(-3%,0,0) scale(1);filter:blur(28px) hue-rotate(0)}50%{transform:translate3d(2%,-12px,0) scale(1.06);filter:blur(32px) hue-rotate(12deg)}100%{transform:translate3d(5%,4px,0) scale(1.02);filter:blur(28px) hue-rotate(-8deg)}}
+.container{width:100%;background:#fff;padding:90px 5%}.container>*{width:min(1180px,92vw);margin-left:auto;margin-right:auto}
+.section-head{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:38px}.section-kicker{text-transform:uppercase;letter-spacing:2px;font-size:10px;font-weight:700;color:#999;margin-bottom:14px}.section-head h2{font-size:clamp(42px,5vw,64px);line-height:.98;letter-spacing:-3px;margin:0 0 10px}.section-head p{margin:0;color:var(--muted);font-size:14px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px}.search{flex:1;min-width:220px}input,select{border:1px solid #d8d8d8;background:#fff;border-radius:12px;padding:13px 14px;outline:none}input:focus,select:focus{border-color:#111}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);border-radius:18px;overflow:hidden}.card{background:#fff;border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:28px;min-height:285px;position:relative;transition:.3s}.card:hover{transform:translateY(-6px);box-shadow:0 20px 45px #00000012;z-index:2}.course-code{display:inline-flex;padding:6px 9px;border:1px solid #ddd;border-radius:999px;background:#fafafa;font-size:11px;font-weight:700;color:#777}.card h3{font-size:25px;letter-spacing:-.7px;margin:10px 0}.card p{color:#666;line-height:1.55;font-size:14px;min-height:62px}.meta{display:flex;gap:7px;flex-wrap:wrap;margin:16px 0}.tag{background:#f3f3f0;border-radius:999px;padding:6px 9px;font-size:11px;color:#555}
+.file-section{width:100%;background:#080808;color:#fff;position:relative;overflow:hidden}.file-section:before{content:"";position:absolute;width:600px;height:600px;right:-180px;top:-150px;background:radial-gradient(circle,#ff48adbb,transparent 65%);filter:blur(30px)}.file-section .container{background:transparent;position:relative;z-index:1}.file-section .section-head p{color:#aaa}.dropzone{border:1px solid #555;border-radius:20px;padding:42px;text-align:center;background:linear-gradient(145deg,#101010,#151515);transition:.25s;position:relative;overflow:hidden}.dropzone:hover{border-color:#aaa;transform:translateY(-2px)}.dropzone p{color:#aaa}.file-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:25px}.file-card{background:#111;border:1px solid #292929;border-radius:16px;padding:20px;transition:.3s}.file-card:hover{transform:translateY(-6px);border-color:#555;box-shadow:0 16px 35px #00000047}.file-icon{font-size:25px}.file-card h4{margin:9px 0 4px;word-break:break-word}.file-card small{color:#999}.file-actions{display:flex;gap:7px;margin-top:13px;flex-wrap:wrap}.file-actions button{border-radius:999px;padding:8px 12px;border:1px solid #555}.open{background:#fff;color:#111}.download{background:#d9ffe8;color:#14532d}.remove{background:#2a1010;color:#ffb4b4}
+.roadmap{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden}.roadmap .card{border:0;min-height:190px}.sem{display:inline-block;padding:6px 9px;border-radius:999px;background:#edf3ff;color:var(--blue);font-size:11px;font-weight:700}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden}.info-grid .card{border:0;min-height:170px}.empty{text-align:center;color:#999;padding:35px;grid-column:1/-1;background:#fff}
+#gpa .card{border:1px solid var(--line);border-radius:20px;box-shadow:0 18px 50px #0000000d}.gpa-row{align-items:center}#gpaResult{font-size:34px;letter-spacing:-1.5px}
+footer{width:100%;padding:55px 5%;background:#fff;border-top:1px solid var(--line);text-align:center;color:#777;font-size:13px}
+.quick-nav{position:fixed;right:24px;bottom:24px;z-index:50;display:flex;gap:7px;padding:7px;border:1px solid #ffffff80;background:#ffffffc7;backdrop-filter:blur(18px);border-radius:999px;box-shadow:0 12px 35px #00000026}.quick-nav a{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;color:#111;text-decoration:none;font-size:12px}.quick-nav a:hover{background:#111;color:#fff}
+.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,20px);background:#111;color:#fff;padding:12px 17px;border-radius:999px;font-size:13px;opacity:0;pointer-events:none;z-index:100;transition:.3s}.toast.show{opacity:1;transform:translate(-50%,0)}
+.reveal{opacity:0;transform:translateY(35px);filter:blur(2px);transition:opacity .8s ease,transform .8s ease,filter .8s ease}.reveal.visible{opacity:1;transform:none;filter:blur(0)}
+.cursor-glow{position:fixed;width:280px;height:280px;border-radius:50%;pointer-events:none;z-index:999;background:radial-gradient(circle,#ff4da61a,#6f5bff0b 35%,transparent 70%);transform:translate(-50%,-50%);opacity:0}.grid .card:after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(120deg,transparent 25%,#ffffff80 48%,transparent 70%);transform:translateX(-120%);transition:.7s}.grid .card:hover:after{transform:translateX(120%)}
+@media(pointer:fine){.cursor-glow{opacity:1}}
+@media(max-width:850px){.nav{padding:0 20px}.navlinks{display:none}.hero{padding-top:60px;min-height:760px}.container{padding:65px 25px}.grid,.file-grid{grid-template-columns:1fr 1fr}.roadmap{grid-template-columns:1fr 1fr}.info-grid{grid-template-columns:1fr}}
+@media(max-width:560px){h1{font-size:56px;letter-spacing:-3px}.hero-visual{height:320px}.book-stack{width:220px;height:285px}.grid,.file-grid,.roadmap{grid-template-columns:1fr}.section-head{display:block}.section-head h2{font-size:40px}.quick-nav{right:12px;bottom:12px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+
+ .campus-copy{left:25px;right:25px;bottom:35px}.campus-badge{right:20px;top:20px}
+ .campus-copy h2{letter-spacing:-2px}
+}
+
+</style>
+</head>
+<body>
+<div class="cursor-glow"></div>
+
+<nav class="nav">
+  <div class="brand"><div class="logo">MR</div><span>RASYIIQ ACADEMIC</span></div>
+  <div class="navlinks"><a href="#library">Library</a><a href="#files">My Files</a><a href="#gpa">GPA</a><a href="#roadmap">Roadmap</a></div>
+</nav>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Muhammad Rasyiiq · ITB STEI-K</div>
+    <h1>Study Smarter,<br>Not Harder.</h1>
+    <p>Personal academic library untuk menyimpan, mengakses, dan mengorganisasi materi kuliah Muhammad Rasyiiq sebagai mahasiswa ITB STEI-K.</p>
+    <a class="btn" href="#files">＋ Simpan Materi Kuliah</a>
+    <div class="hero-visual"><div class="book-stack"></div></div>
+    
+</div>
+
+  </div>
+</header>
+
+<section class="container" id="library">
+  <div class="section-head"><div><div class="section-kicker">01 / Course Collection</div><h2>Academic Library</h2><p>Akses cepat ke semua mata kuliah dan folder Google Drive.</p></div></div>
+  <div class="toolbar"><input class="search" id="courseSearch" placeholder="Cari kode atau nama mata kuliah..."><select id="categoryFilter"><option value="all">Semua Kategori</option><option value="TPB">TPB</option></select></div>
+  <div class="grid" id="courseGrid"></div>
+</section>
+
+<section class="file-section" id="files">
+  <div class="container">
+    <div class="section-head"><div><div class="section-kicker">02 / Personal Archive</div><h2>My Academic Files</h2><p>File tersimpan secara lokal di browser perangkat ini.</p></div><button class="btn" id="pickBtn">＋ Tambah File</button></div>
+    <div class="dropzone" id="dropzone"><div style="font-size:40px">📚</div><h3>Drag & Drop file kuliah di sini</h3><p>PDF, DOCX, PPTX, XLSX, gambar, ZIP, dan file lainnya.</p><input id="fileInput" type="file" multiple hidden></div>
+    <div class="toolbar" style="margin-top:20px"><input class="search" id="fileSearch" placeholder="Cari file yang tersimpan..."><select id="fileTypeFilter"><option value="all">Semua File</option><option value="pdf">PDF</option><option value="image">Gambar</option><option value="office">Office</option><option value="other">Lainnya</option></select></div>
+    <div class="file-grid" id="fileGrid"></div>
+  </div>
+</section>
+
+<section class="container" id="gpa">
+  <div class="section-head"><div><div class="section-kicker">03 / Performance</div><h2>GPA Calculator</h2><p>Hitung IPS berdasarkan SKS dan nilai.</p></div></div>
+  <div class="card"><div id="gpaRows"></div><div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px"><button class="btn" onclick="addGpaRow()">＋ Mata Kuliah</button><button class="btn" onclick="calculateGpa()">Hitung IPS</button></div><h2 id="gpaResult">IPS: 0.00</h2></div>
+</section>
+
+<section class="container" id="roadmap">
+  <div class="section-head"><div><div class="section-kicker">04 / Journey</div><h2>Academic Roadmap</h2><p>Gambaran perjalanan akademik ITB STEI-K.</p></div></div>
+  <div class="roadmap">
+    <div class="card"><span class="sem">SEMESTER 1</span><h3>Foundation</h3><p>Matematika, Fisika, Kimia, Bahasa Indonesia, dan Berpikir Komputasional.</p></div>
+    <div class="card"><span class="sem">SEMESTER 2</span><h3>Core Computing</h3><p>Bangun dasar komputasi dan kemampuan teknis secara bertahap.</p></div>
+    <div class="card"><span class="sem">SEMESTER 3–4</span><h3>Deepening</h3><p>Perkuat programming, AI, data, software, dan sistem.</p></div>
+    <div class="card"><span class="sem">SEMESTER 5–8</span><h3>Professional</h3><p>Proyek, internship, penelitian, skripsi, portfolio, dan karier.</p></div>
+  </div>
+</section>
+
+<section class="container">
+  <div class="info-grid">
+    <div class="card"><h2>👨‍🎓 Muhammad Rasyiiq</h2><p><b>Institut Teknologi Bandung</b><br>STEI-K<br>Personal Academic Library</p></div>
+    <div class="card"><h2>🎯 Focus</h2><p>Programming · Mathematics · Physics · Chemistry · Sustainability · Academic Projects</p></div>
+  </div>
+</section>
+
+<div class="quick-nav"><a href="#library">01</a><a href="#files">02</a><a href="#gpa">03</a><a href="#roadmap">04</a></div>
+<div class="toast" id="toast"></div>
+
+<footer><b>Muhammad Rasyiiq · ITB STEI-K</b><br>Personal Academic Library © 2026</footer>
+
+<script>
+const courses=[
+["MA1101","Matematika I","TPB",3,"Konsep dasar kalkulus dan matematika untuk studi teknik.","https://drive.google.com/drive/folders/1X1cHt5Y3OvI7emG01HTLd2q3LPP1pjuD?usp=sharing"],
+["FI1101","Fisika Dasar I","TPB",4,"Mekanika, energi, momentum, dan dasar fisika.","https://drive.google.com/drive/folders/1ghH5xiXBdmp71bwRwQZmBgv9CMjEfqoH?usp=sharing"],
+["KI1101","Kimia Dasar I","TPB",3,"Konsep dasar kimia, stoikiometri, dan struktur materi.","https://drive.google.com/drive/folders/1mJvc-ndI010MCALiSS2Sske2GD6hiMVN?usp=sharing"],
+["FI1102","Lab Fisika Dasar","TPB",1,"Praktikum dan eksperimen dasar fisika.","https://drive.google.com/drive/folders/1rGO0snMZB9zp-jiRSOs6sGRRy7cVzckS?usp=sharing"],
+["WI1103","Pengantar Prinsip Keberlanjutan","TPB",2,"Konsep dasar keberlanjutan dan penerapannya.","https://drive.google.com/drive/folders/1IH3RpXbuOSUnEhMNECKtpe0KY_i3KhJv?usp=sharing"],
+["WI1102","Berpikir Komputasional","TPB",2,"Pemecahan masalah dengan pendekatan komputasional.","https://drive.google.com/drive/folders/11CXNEB68q93a8WeqpqI6wjVoc2eX-5mR?usp=sharing"],
+["WI2005","Bahasa Indonesia","TPB",2,"Komunikasi akademik dan penulisan ilmiah.","https://drive.google.com/drive/folders/1YfmsZ3AP2DXKNY_O-duHM-qvRK5RWiTk?usp=sharing"]
+];
+
+const grid=document.getElementById("courseGrid");
+function renderCourses(){
+ const q=document.getElementById("courseSearch").value.toLowerCase();
+ const cat=document.getElementById("categoryFilter").value;
+ const list=courses.filter(c=>(cat==="all"||c[2]===cat)&&(`${c[0]} ${c[1]} ${c[4]}`).toLowerCase().includes(q));
+ grid.innerHTML=list.length?list.map(c=>`<div class="card"><span class="course-code">${c[0]}</span><h3>${c[1]}</h3><p>${c[4]}</p><div class="meta"><span class="tag">${c[2]}</span><span class="tag">${c[3]} SKS</span></div><a class="btn" href="${c[5]}" target="_blank" rel="noopener noreferrer">🔗 Buka Google Drive</a></div>`).join(""):`<div class="empty">Mata kuliah tidak ditemukan.</div>`;
+}
+document.getElementById("courseSearch").oninput=renderCourses;
+document.getElementById("categoryFilter").onchange=renderCourses;
+renderCourses();
+
+let db;
+const request=indexedDB.open("RasyiiqAcademicLibrary",1);
+request.onupgradeneeded=e=>{db=e.target.result;if(!db.objectStoreNames.contains("files"))db.createObjectStore("files",{keyPath:"id",autoIncrement:true})};
+request.onsuccess=e=>{db=e.target.result;renderFiles()};
+request.onerror=()=>alert("Browser tidak mendukung penyimpanan file lokal.");
+
+const input=document.getElementById("fileInput");
+document.getElementById("pickBtn").onclick=()=>input.click();
+input.onchange=()=>saveFiles([...input.files]);
+const dz=document.getElementById("dropzone");
+["dragenter","dragover"].forEach(x=>dz.addEventListener(x,e=>{e.preventDefault();dz.classList.add("drag")}));
+["dragleave","drop"].forEach(x=>dz.addEventListener(x,e=>{e.preventDefault();dz.classList.remove("drag")}));
+dz.addEventListener("drop",e=>saveFiles([...e.dataTransfer.files]));
+function saveFiles(files){if(!db)return;const tx=db.transaction("files","readwrite"),store=tx.objectStore("files");files.forEach(file=>store.add({name:file.name,type:file.type,size:file.size,created:new Date().toISOString(),blob:file}));tx.oncomplete=()=>{input.value="";renderFiles()}}
+function getFiles(cb){const r=db.transaction("files","readonly").objectStore("files").getAll();r.onsuccess=()=>cb(r.result)}
+function fileKind(f){if(f.type==="application/pdf")return"pdf";if(f.type.startsWith("image/"))return"image";if(/word|presentation|spreadsheet|excel|officedocument/.test(f.type))return"office";return"other"}
+function icon(f){const k=fileKind(f);return k==="pdf"?"📕":k==="image"?"🖼️":k==="office"?"📘":"📄"}
+function formatSize(n){if(n<1024)return n+" B";if(n<1048576)return(n/1024).toFixed(1)+" KB";return(n/1048576).toFixed(1)+" MB"}
+function renderFiles(){if(!db)return;getFiles(all=>{const q=document.getElementById("fileSearch").value.toLowerCase(),k=document.getElementById("fileTypeFilter").value;const list=all.filter(f=>(!q||f.name.toLowerCase().includes(q))&&(k==="all"||fileKind(f)===k));document.getElementById("fileGrid").innerHTML=list.length?list.map(f=>`<div class="file-card"><div class="file-icon">${icon(f)}</div><h4>${escapeHtml(f.name)}</h4><small>${formatSize(f.size)} · ${new Date(f.created).toLocaleDateString("id-ID")}</small><div class="file-actions"><button class="open" onclick="openFile(${f.id})">Buka</button><button class="download" onclick="downloadFile(${f.id})">Download</button><button class="remove" onclick="deleteFile(${f.id})">Hapus</button></div></div>`).join(""):`<div class="empty">Belum ada file tersimpan.</div>`})}
+document.getElementById("fileSearch").oninput=renderFiles;
+document.getElementById("fileTypeFilter").onchange=renderFiles;
+function getOne(id,cb){const r=db.transaction("files","readonly").objectStore("files").get(id);r.onsuccess=()=>cb(r.result)}
+function openFile(id){getOne(id,f=>{if(!f)return;const u=URL.createObjectURL(f.blob);window.open(u,"_blank");setTimeout(()=>URL.revokeObjectURL(u),60000)})}
+function downloadFile(id){getOne(id,f=>{if(!f)return;const u=URL.createObjectURL(f.blob),a=document.createElement("a");a.href=u;a.download=f.name;a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)})}
+function deleteFile(id){if(confirm("Hapus file ini?")){const tx=db.transaction("files","readwrite");tx.objectStore("files").delete(id);tx.oncomplete=renderFiles}}
+function escapeHtml(s){return s.replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
+
+const grades={A:4,AB:3.5,B:3,BC:2.5,C:2,D:1,E:0};
+function addGpaRow(){const row=document.createElement("div");row.className="toolbar gpa-row";row.innerHTML=`<input placeholder="Nama mata kuliah" style="flex:1"><input type="number" min="1" max="6" value="3" style="width:90px"><select style="width:110px">${Object.keys(grades).map(g=>`<option>${g}</option>`).join("")}</select><button class="btn" onclick="this.parentElement.remove()">×</button>`;document.getElementById("gpaRows").appendChild(row)}
+function calculateGpa(){let total=0,points=0;document.querySelectorAll(".gpa-row").forEach(r=>{const sks=Number(r.querySelector("input[type=number]").value)||0,grade=r.querySelector("select").value;total+=sks;points+=sks*grades[grade]});document.getElementById("gpaResult").textContent="IPS: "+(total?(points/total).toFixed(2):"0.00")}
+for(let i=0;i<4;i++)addGpaRow();
+
+document.querySelectorAll(".container,.hero,.file-section").forEach(el=>el.classList.add("reveal"));
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");observer.unobserve(e.target)}}),{threshold:.08});
+document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+
+const glow=document.querySelector(".cursor-glow");
+if(glow&&window.matchMedia("(pointer:fine)").matches){
+ let gx=0,gy=0,tx=0,ty=0;
+ window.addEventListener("pointermove",e=>{tx=e.clientX;ty=e.clientY},{passive:true});
+ function move(){gx+=(tx-gx)*.12;gy+=(ty-gy)*.12;glow.style.left=gx+"px";glow.style.top=gy+"px";requestAnimationFrame(move)} move();
+}
+const heroVisual=document.querySelector(".hero-visual");
+if(heroVisual&&window.matchMedia("(pointer:fine)").matches){
+ window.addEventListener("pointermove",e=>{const x=(e.clientX/innerWidth-.5)*2,y=(e.clientY/innerHeight-.5)*2,b=heroVisual.querySelector(".book-stack");if(b&&!b.matches(":hover"))b.style.transform=`translateX(-50%) rotate(${(-8+x*2).toFixed(2)}deg) translateY(${y*-8}px)`},{passive:true});
+}
+
+
+</script>
+</body>
+</html>
